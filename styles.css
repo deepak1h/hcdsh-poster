@@ -724,27 +724,27 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ANTIBIOTICS SECTION & SINGLE-LINE REFERENCE CARD
+   ANTIBIOTICS SECTION & TWO-LINE REFERENCE CARD
    -------------------------------------------------------------------------- */
 .col-antibiotics {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
   height: 100%;
 }
 
 .antibiotics-card {
-  flex: 1.45;
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0.35rem;
+  padding: 0.4rem;
 }
 
 .antibiotic-list {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.22rem;
   flex: 1;
   justify-content: space-between;
 }
@@ -753,7 +753,7 @@ body {
   background: rgba(16, 185, 129, 0.08);
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 4px;
-  padding: 0.2rem 0.35rem;
+  padding: 0.3rem 0.4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -761,11 +761,11 @@ body {
 
 .abx-title {
   font-weight: 800;
-  font-size: clamp(0.58rem, 0.7vw, 0.66rem);
+  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
   color: #34d399;
-  margin-bottom: 0.03rem;
+  margin-bottom: 0.04rem;
   border-bottom: 1px dashed rgba(52, 211, 153, 0.3);
-  padding-bottom: 0.02rem;
+  padding-bottom: 0.03rem;
 }
 
 .abx-spec {
@@ -775,61 +775,70 @@ body {
 }
 
 .abx-field {
-  font-size: clamp(0.5rem, 0.58vw, 0.56rem);
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   color: #cbd5e1;
-  line-height: 1.18;
+  line-height: 1.22;
   margin-top: 0.02rem;
 }
 
 /* --------------------------------------------------------------------------
-   SINGLE LINE REFERENCE & STACKED CREDITS
+   TWO LINE REFERENCE & STACKED CREDITS (COMPACT HEIGHT)
    -------------------------------------------------------------------------- */
 .reference-card {
-  flex: 0.85;
+  flex: 0.72;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
   border: 1.5px solid var(--border-gold);
-  padding: 0.3rem;
+  padding: 0.22rem 0.3rem;
   justify-content: center;
 }
 
 .reference-content {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
 }
 
-/* SINGLE-LINE REFERENCE BADGE */
+/* TWO-LINE REFERENCE BADGE */
 .ref-book-line {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid var(--border-gold);
-  color: #fde047;
-  padding: 0.12rem 0.25rem;
+  padding: 0.1rem 0.22rem;
   border-radius: 3px;
-  font-weight: 800;
-  font-size: clamp(0.5rem, 0.6vw, 0.6rem);
   text-align: center;
-  white-space: nowrap;
-  letter-spacing: 0.2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.02rem;
 }
 
 .ref-lbl {
   color: #ffffff;
   font-weight: 900;
-  margin-right: 0.15rem;
+  font-size: clamp(0.5rem, 0.58vw, 0.56rem);
+  letter-spacing: 0.5px;
+  line-height: 1.05;
+}
+
+.ref-text {
+  color: #fde047;
+  font-weight: 800;
+  font-size: clamp(0.5rem, 0.58vw, 0.56rem);
+  letter-spacing: 0.2px;
+  line-height: 1.05;
 }
 
 /* VERTICAL STACK FOR GUIDED BY & PRESENTED BY */
 .credits-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
 }
 
 .credit-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  padding: 0.12rem 0.25rem;
+  padding: 0.08rem 0.22rem;
 }
 
 .credit-title {
@@ -857,7 +866,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: clamp(0.48rem, 0.55vw, 0.52rem);
-  padding: 0.05rem 0.2rem;
+  padding: 0.07rem 1rem;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 2px;
   line-height: 1.05;
@@ -883,12 +892,12 @@ body {
 .student-row {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  justify-content: space-between;
   font-size: clamp(0.48rem, 0.55vw, 0.52rem);
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 3px;
-  padding: 0.05rem 0.25rem;
+  padding: 0.07rem 1rem;
 }
 
 .roll-badge {
@@ -900,6 +909,7 @@ body {
 .student-name {
   font-weight: 700;
   color: #ffffff;
+  text-align: right;
 }
 
 
