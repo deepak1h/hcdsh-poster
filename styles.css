@@ -1,0 +1,766 @@
+/* ==========================================================================
+   DENTAL AWARENESS 4:3 FLEX POSTER STYLESHEET
+   Strict 4:3 Aspect Ratio Viewport Fit (No Scrollbars, Single Glance View)
+   ========================================================================== */
+
+:root {
+  /* Default Theme: Royal Blue & Gold */
+  --bg-workspace: #060d1b;
+  --bg-poster: #091328;
+  --bg-card: #0f1e3d;
+  --bg-card-alt: #14264e;
+  
+  --primary-accent: #38bdf8;
+  --gold-accent: #f59e0b;
+  --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-heading: #ffffff;
+  
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-gold: rgba(245, 158, 11, 0.4);
+  
+  --emergency-theme: #ef4444;
+  --analgesic-theme: #3b82f6;
+  --antibiotics-theme: #10b981;
+
+  --font-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-title: 'Cinzel', serif;
+  --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   THEME PRESETS
+   -------------------------------------------------------------------------- */
+body.theme-teal {
+  --bg-workspace: #022c22;
+  --bg-poster: #022c22;
+  --bg-card: #065f46;
+  --bg-card-alt: #047857;
+  --primary-accent: #2dd4bf;
+  --gold-accent: #fbbf24;
+  --gold-gradient: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  --border-light: rgba(45, 212, 191, 0.2);
+}
+
+body.theme-navy {
+  --bg-workspace: #09090b;
+  --bg-poster: #09090b;
+  --bg-card: #18181b;
+  --bg-card-alt: #27272a;
+  --primary-accent: #f43f5e;
+  --gold-accent: #eab308;
+  --gold-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  --border-light: rgba(255, 255, 255, 0.15);
+}
+
+body.theme-print {
+  --bg-workspace: #cbd5e1;
+  --bg-poster: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-card-alt: #f1f5f9;
+  --primary-accent: #0284c7;
+  --gold-accent: #b45309;
+  --gold-gradient: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-heading: #0284c7;
+  --border-light: #cbd5e1;
+  --border-gold: #b45309;
+}
+
+/* --------------------------------------------------------------------------
+   BASE & RESET (STRICT VIEWPORT FIT - NO SCROLLBARS)
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font-base);
+  background-color: var(--bg-workspace);
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+/* --------------------------------------------------------------------------
+   MINIMAL FLOATING CONTROL BAR
+   -------------------------------------------------------------------------- */
+.control-bar {
+  width: 100%;
+  height: 32px;
+  background: #091224;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.control-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: #38bdf8;
+  font-size: 0.78rem;
+}
+
+.brand-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.control-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.control-group select {
+  background: #1e293b;
+  color: #fff;
+  border: 1px solid #334155;
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* --------------------------------------------------------------------------
+   STRICT 4:3 POSTER CONTAINER (FULL SCREEN SINGLE GLANCE)
+   -------------------------------------------------------------------------- */
+.poster-workspace {
+  width: 100vw;
+  height: calc(100vh - 32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  overflow: hidden;
+}
+
+.poster-container {
+  aspect-ratio: 4 / 3;
+  height: calc(100vh - 38px);
+  width: calc((100vh - 38px) * 4 / 3);
+  max-width: 98vw;
+  max-height: calc(98vw * 3 / 4);
+  background-color: var(--bg-poster);
+  border: 3.5px solid var(--border-gold);
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 0.55rem 0.7rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER WITH COLLEGE LOGO (ONE SINGLE LINE COLLEGE NAME)
+   -------------------------------------------------------------------------- */
+.poster-header {
+  background: linear-gradient(180deg, var(--bg-card-alt) 0%, var(--bg-card) 100%);
+  border: 1.5px solid var(--border-gold);
+  border-radius: 5px;
+  padding: 0.25rem 0.6rem;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.4rem;
+  flex-shrink: 0;
+}
+
+.header-logo-left, .header-logo-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.college-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  border: 1.5px solid var(--gold-accent);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.header-title-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.college-name {
+  font-family: var(--font-title);
+  font-size: clamp(0.75rem, 1.25vw, 1.18rem);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.department-name {
+  font-family: var(--font-heading);
+  font-size: clamp(0.6rem, 0.95vw, 0.88rem);
+  font-weight: 800;
+  color: var(--primary-accent);
+  letter-spacing: 0.5px;
+  margin-top: 0.1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   BODY GRID SYSTEM (3 EQUAL BALANCE COLUMNS FIT SINGLE GLANCE)
+   -------------------------------------------------------------------------- */
+.poster-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.22fr 1.05fr 0.95fr;
+  gap: 0.45rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.poster-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION CARDS
+   -------------------------------------------------------------------------- */
+.section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  height: 100%;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.45rem;
+  border-radius: 3px;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.emergency-header {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.analgesics-header {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.antibiotics-header {
+  background: linear-gradient(135deg, #059669 0%, #065f46 100%);
+}
+
+.section-icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(0.7rem, 0.92vw, 0.88rem);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   SUB-SECTIONS & DRUGS (INCREASED THICKNESS & PADDING FOR EMERGENCY DRUGS)
+   -------------------------------------------------------------------------- */
+.sub-section {
+  margin-bottom: 0.25rem;
+}
+
+.sub-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  margin-bottom: 0.18rem;
+  font-family: var(--font-heading);
+  border-left: 2.5px solid var(--gold-accent);
+}
+
+.primary-bg {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: #ef4444;
+}
+
+.secondary-bg {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fde047;
+  border-color: #f59e0b;
+}
+
+.centrally-bg {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border-color: #6366f1;
+}
+
+.peripherally-bg {
+  background: rgba(14, 165, 233, 0.15);
+  color: #7dd3fc;
+  border-color: #0ea5e9;
+}
+
+.sub-letter {
+  background: var(--gold-gradient);
+  color: #000;
+  font-weight: 900;
+  font-size: 0.6rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-title {
+  font-size: clamp(0.6rem, 0.76vw, 0.7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sub-tag {
+  font-weight: 500;
+  font-size: 0.6rem;
+  opacity: 0.9;
+  text-transform: none;
+}
+
+/* DRUG 2-COLUMN GRID (INCREASED PADDING / THICKNESS) */
+.drug-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.18rem;
+}
+
+.drug-item {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  padding: 0.18rem 0.28rem;
+}
+
+.drug-head {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.03rem;
+}
+
+.drug-bullet {
+  width: 5px;
+  height: 5px;
+  background: var(--emergency-theme);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.drug-bullet.alt-bullet {
+  background: var(--gold-accent);
+}
+
+.drug-name {
+  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.08;
+}
+
+.drug-spec {
+  font-weight: 500;
+  color: var(--primary-accent);
+  font-size: 0.58rem;
+}
+
+.drug-details {
+  padding-left: 0.38rem;
+  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.02rem;
+}
+
+.detail-row {
+  line-height: 1.08;
+}
+
+.lbl {
+  font-weight: 700;
+  color: var(--gold-accent);
+  margin-right: 0.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   ANALGESICS SECTION A (STACKED LIST ONE BELOW ONE TO FILL BLANK SPACE)
+   -------------------------------------------------------------------------- */
+.analgesic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.analgesic-box {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 3px;
+  padding: 0.2rem 0.32rem;
+}
+
+.box-title {
+  font-weight: 800;
+  color: #60a5fa;
+  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+  margin-bottom: 0.04rem;
+  border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
+  padding-bottom: 0.02rem;
+}
+
+.box-field {
+  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
+  color: #cbd5e1;
+  line-height: 1.08;
+}
+
+/* COX INHIBITORS GRID */
+.group-wrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.18rem;
+}
+
+.group-title-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  font-size: clamp(0.58rem, 0.68vw, 0.64rem);
+  font-weight: 700;
+  margin-bottom: 0.12rem;
+}
+
+.cox2-bg {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+.group-badge {
+  background: #38bdf8;
+  color: #000;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  font-size: 0.52rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cox2-bg .group-badge {
+  background: #c084fc;
+}
+
+.cox-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.cox-item {
+  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.08rem 0.2rem;
+  border-radius: 2px;
+  color: #cbd5e1;
+  line-height: 1.08;
+}
+
+.cox-item .idx {
+  font-weight: 700;
+  color: var(--gold-accent);
+  margin-right: 0.12rem;
+}
+
+.cox-item .name {
+  font-weight: 700;
+  color: #ffffff;
+  margin-right: 0.12rem;
+}
+
+.mt-xs {
+  margin-top: 0.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   ANTIBIOTICS SECTION & COMPACT REFERENCE (BALANCED FULL HEIGHT)
+   -------------------------------------------------------------------------- */
+.antibiotics-card {
+  flex: 1.1;
+}
+
+.antibiotic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.abx-card {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 3px;
+  padding: 0.2rem 0.3rem;
+}
+
+.abx-title {
+  font-weight: 800;
+  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+  color: #34d399;
+  margin-bottom: 0.04rem;
+  border-bottom: 1px dashed rgba(52, 211, 153, 0.3);
+  padding-bottom: 0.02rem;
+}
+
+.abx-spec {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #a7f3d0;
+}
+
+.abx-field {
+  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
+  color: #cbd5e1;
+  line-height: 1.08;
+}
+
+/* --------------------------------------------------------------------------
+   COMPACT REFERENCE SECTION (BALANCED BOTTOM FIT)
+   -------------------------------------------------------------------------- */
+.reference-card {
+  flex: 0.9;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1.5px solid var(--border-gold);
+  justify-content: center;
+}
+
+.reference-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.ref-book-line {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid var(--border-gold);
+  color: #fde047;
+  padding: 0.12rem 0.35rem;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: clamp(0.56rem, 0.68vw, 0.64rem);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ref-lbl {
+  color: #ffffff;
+  font-weight: 900;
+  margin-right: 0.12rem;
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 0.22rem;
+}
+
+.credit-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  padding: 0.18rem 0.28rem;
+}
+
+.credit-title {
+  display: flex;
+  align-items: center;
+  gap: 0.18rem;
+  font-size: clamp(0.54rem, 0.62vw, 0.6rem);
+  font-weight: 800;
+  color: var(--primary-accent);
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.06rem;
+  margin-bottom: 0.12rem;
+}
+
+.credit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.credit-list li {
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
+  line-height: 1.05;
+}
+
+.doc-name {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.doc-role {
+  font-size: 0.52rem;
+  color: #cbd5e1;
+}
+
+.student-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.12rem;
+}
+
+.chip {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #f8fafc;
+  font-size: clamp(0.52rem, 0.58vw, 0.56rem);
+  font-weight: 600;
+  padding: 0.06rem 0.18rem;
+  border-radius: 2px;
+}
+
+.roll {
+  color: var(--gold-accent);
+  margin-left: 0.04rem;
+}
+
+/* --------------------------------------------------------------------------
+   PRINT STYLES
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: 4in 3in;
+    margin: 0;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+
+  .control-bar {
+    display: none !important;
+  }
+
+  .poster-workspace {
+    padding: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .poster-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.4rem !important;
+    background: #ffffff !important;
+  }
+}
