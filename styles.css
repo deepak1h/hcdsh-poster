@@ -10,18 +10,18 @@
   --bg-poster: #091328;
   --bg-card: #0f1e3d;
   --bg-card-alt: #14264e;
-  
+
   --primary-accent: #38bdf8;
   --gold-accent: #f59e0b;
   --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-  
+
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-heading: #ffffff;
-  
+
   --border-light: rgba(255, 255, 255, 0.12);
   --border-gold: rgba(245, 158, 11, 0.4);
-  
+
   --emergency-theme: #ef4444;
   --analgesic-theme: #3b82f6;
   --antibiotics-theme: #10b981;
@@ -93,7 +93,7 @@ body.theme-print .department-name {
 body.theme-print .section-card {
   background: #ffffff;
   border-color: #64748b;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.theme-print .primary-bg {
@@ -120,9 +120,9 @@ body.theme-print .peripherally-bg {
   border-color: #0ea5e9;
 }
 
-body.theme-print .drug-item, 
-body.theme-print .abx-card, 
-body.theme-print .analgesic-box, 
+body.theme-print .drug-item,
+body.theme-print .abx-card,
+body.theme-print .analgesic-box,
 body.theme-print .credit-box,
 body.theme-print .group-wrapper,
 body.theme-print .student-row,
@@ -131,8 +131,8 @@ body.theme-print .vertical-list li {
   border-color: #cbd5e1;
 }
 
-body.theme-print .drug-name, 
-body.theme-print .cox-item .name, 
+body.theme-print .drug-name,
+body.theme-print .cox-item .name,
 body.theme-print .doc-name,
 body.theme-print .student-name {
   color: #0f172a;
@@ -148,9 +148,9 @@ body.theme-print .abx-title {
   border-bottom-color: #6ee7b7;
 }
 
-body.theme-print .drug-details, 
-body.theme-print .box-field, 
-body.theme-print .abx-field, 
+body.theme-print .drug-details,
+body.theme-print .box-field,
+body.theme-print .abx-field,
 body.theme-print .cox-item {
   color: #1e293b;
 }
@@ -203,7 +203,8 @@ body.theme-print .ref-book-line {
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -337,7 +338,8 @@ html, body {
   flex-shrink: 0;
 }
 
-.header-logo-left, .header-logo-right {
+.header-logo-left,
+.header-logo-right {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -899,8 +901,7 @@ html, body {
   font-weight: 700;
   color: #ffffff;
 }
-  color: #ffffff;
-}
+
 
 /* --------------------------------------------------------------------------
    PRINT STYLES
@@ -910,8 +911,9 @@ html, body {
     size: 7in 5in;
     margin: 0;
   }
-  
-  html, body {
+
+  html,
+  body {
     background: #ffffff !important;
     color: #000000 !important;
     width: 100% !important;
