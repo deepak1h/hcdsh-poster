@@ -134,8 +134,7 @@ body.theme-print .vertical-list li {
 body.theme-print .drug-name, 
 body.theme-print .cox-item .name, 
 body.theme-print .doc-name,
-body.theme-print .student-name,
-body.theme-print .ref-val {
+body.theme-print .student-name {
   color: #0f172a;
 }
 
@@ -189,8 +188,9 @@ body.theme-print .sub-letter {
   color: #ffffff !important;
 }
 
-body.theme-print .ref-book-card {
+body.theme-print .ref-book-line {
   background: #fef3c7;
+  color: #92400e;
   border-color: #b45309;
 }
 
@@ -610,7 +610,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   ANALGESICS SECTION A (GENEROUS SPACING TO FILL COLUMN 2)
+   ANALGESICS SECTION A
    -------------------------------------------------------------------------- */
 .analgesic-list {
   display: flex;
@@ -625,7 +625,7 @@ html, body {
   background: rgba(59, 130, 246, 0.08);
   border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: 4px;
-  padding: 0.25rem 0.35rem;
+  padding: 0.32rem 0.45rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -634,16 +634,17 @@ html, body {
 .box-title {
   font-weight: 800;
   color: #60a5fa;
-  font-size: clamp(0.6rem, 0.74vw, 0.7rem);
-  margin-bottom: 0.05rem;
+  font-size: clamp(0.6rem, 0.75vw, 0.72rem);
+  margin-bottom: 0.06rem;
   border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
-  padding-bottom: 0.03rem;
+  padding-bottom: 0.04rem;
 }
 
 .box-field {
-  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
+  font-size: clamp(0.54rem, 0.64vw, 0.62rem);
   color: #cbd5e1;
-  line-height: 1.1;
+  line-height: 1.25;
+  margin-top: 0.04rem;
 }
 
 /* COX INHIBITORS GRID */
@@ -721,13 +722,21 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   ANTIBIOTICS SECTION & STACKED REFERENCE CARD
+   ANTIBIOTICS SECTION & SINGLE-LINE REFERENCE CARD
    -------------------------------------------------------------------------- */
-.antibiotics-card {
-  flex: 1.1;
+.col-antibiotics {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.3rem;
+  height: 100%;
+}
+
+.antibiotics-card {
+  flex: 1.45;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.35rem;
 }
 
 .antibiotic-list {
@@ -741,8 +750,8 @@ html, body {
 .abx-card {
   background: rgba(16, 185, 129, 0.08);
   border: 1px solid rgba(16, 185, 129, 0.25);
-  border-radius: 3px;
-  padding: 0.15rem 0.28rem;
+  border-radius: 4px;
+  padding: 0.2rem 0.35rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -758,101 +767,95 @@ html, body {
 }
 
 .abx-spec {
-  font-size: 0.56rem;
+  font-size: 0.54rem;
   font-weight: 600;
   color: #a7f3d0;
 }
 
 .abx-field {
-  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
+  font-size: clamp(0.5rem, 0.58vw, 0.56rem);
   color: #cbd5e1;
-  line-height: 1.08;
+  line-height: 1.18;
+  margin-top: 0.02rem;
 }
 
 /* --------------------------------------------------------------------------
-   2-LINE REFERENCE BADGE & VERTICALLY STACKED FACULTY/STUDENT CREDITS
+   SINGLE LINE REFERENCE & STACKED CREDITS
    -------------------------------------------------------------------------- */
 .reference-card {
-  flex: 0.9;
+  flex: 0.85;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
   border: 1.5px solid var(--border-gold);
+  padding: 0.3rem;
   justify-content: center;
 }
 
 .reference-content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
-/* 2-LINE REFERENCE CARD */
-.ref-book-card {
+/* SINGLE-LINE REFERENCE BADGE */
+.ref-book-line {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid var(--border-gold);
-  border-radius: 4px;
-  padding: 0.18rem 0.35rem;
+  color: #fde047;
+  padding: 0.12rem 0.25rem;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: clamp(0.5rem, 0.6vw, 0.6rem);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.04rem;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
 }
 
 .ref-lbl {
-  color: var(--gold-accent);
-  font-weight: 900;
-  font-size: clamp(0.56rem, 0.66vw, 0.62rem);
-  letter-spacing: 0.5px;
-}
-
-.ref-val {
   color: #ffffff;
-  font-weight: 800;
-  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
-  line-height: 1.1;
+  font-weight: 900;
+  margin-right: 0.15rem;
 }
 
 /* VERTICAL STACK FOR GUIDED BY & PRESENTED BY */
 .credits-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.22rem;
+  gap: 0.15rem;
 }
 
 .credit-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  padding: 0.18rem 0.3rem;
+  padding: 0.12rem 0.25rem;
 }
 
 .credit-title {
   display: flex;
   align-items: center;
-  gap: 0.18rem;
-  font-size: clamp(0.54rem, 0.62vw, 0.6rem);
+  gap: 0.15rem;
+  font-size: clamp(0.5rem, 0.58vw, 0.56rem);
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 0.3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.06rem;
-  margin-bottom: 0.12rem;
+  padding-bottom: 0.04rem;
+  margin-bottom: 0.08rem;
 }
 
-/* GUIDED BY FACULTY ONE BY ONE VERTICAL STACK */
 .vertical-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.08rem;
+  gap: 0.04rem;
 }
 
 .vertical-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: clamp(0.52rem, 0.6vw, 0.56rem);
-  padding: 0.08rem 0.25rem;
+  font-size: clamp(0.48rem, 0.55vw, 0.52rem);
+  padding: 0.05rem 0.2rem;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 2px;
   line-height: 1.05;
@@ -864,7 +867,7 @@ html, body {
 }
 
 .doc-role {
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   color: #cbd5e1;
 }
 
@@ -872,28 +875,30 @@ html, body {
 .student-list-rows {
   display: flex;
   flex-direction: column;
-  gap: 0.08rem;
+  gap: 0.04rem;
 }
 
 .student-row {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  gap: 0.3rem;
+  font-size: clamp(0.48rem, 0.55vw, 0.52rem);
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 3px;
-  padding: 0.08rem 0.3rem;
+  padding: 0.05rem 0.25rem;
 }
 
 .roll-badge {
   font-weight: 800;
   color: var(--gold-accent);
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  font-size: clamp(0.48rem, 0.55vw, 0.52rem);
 }
 
 .student-name {
   font-weight: 700;
+  color: #ffffff;
+}
   color: #ffffff;
 }
 
