@@ -1,6 +1,7 @@
 /* ==========================================================================
-   DENTAL AWARENESS 4:3 FLEX POSTER STYLESHEET
-   Strict 4:3 Aspect Ratio Viewport Fit (No Truncation, Perfect High Contrast)
+   DENTAL AWARENESS FLEX POSTER STYLESHEET
+   Form Factor: ~1.4:1 Ratio (Near 4:3 Flex Banner Standard e.g. 7ft x 5ft / 14ft x 10ft)
+   Strict Equal Height Column Distribution - Zero Empty Spaces
    ========================================================================== */
 
 :root {
@@ -55,7 +56,7 @@ body.theme-navy {
   --border-light: rgba(255, 255, 255, 0.15);
 }
 
-/* HIGH CONTRAST WHITE FLEX PRINT THEME (OPTIMIZED FOR HIGH VISIBILITY) */
+/* HIGH CONTRAST WHITE FLEX PRINT THEME */
 body.theme-print {
   --bg-workspace: #94a3b8;
   --bg-poster: #ffffff;
@@ -189,7 +190,7 @@ body.theme-print .ref-book-line {
 }
 
 /* --------------------------------------------------------------------------
-   BASE & RESET (STRICT VIEWPORT FIT - NO SCROLLBARS)
+   BASE & RESET
    -------------------------------------------------------------------------- */
 * {
   box-sizing: border-box;
@@ -285,7 +286,8 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   STRICT 4:3 POSTER CONTAINER (FULL SCREEN SINGLE GLANCE)
+   STRICT POSTER CONTAINER (~1.4:1 FORM FACTOR NEAR 4:3)
+   STRETCHES EVERY SECTION TO 100% EQUAL HEIGHT - ZERO BLANK SPACES
    -------------------------------------------------------------------------- */
 .poster-workspace {
   width: 100vw;
@@ -298,18 +300,18 @@ html, body {
 }
 
 .poster-container {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1.4 / 1;
   height: calc(100vh - 36px);
-  width: calc((100vh - 36px) * 4 / 3);
+  width: calc((100vh - 36px) * 1.4);
   max-width: 98.5vw;
-  max-height: calc(98.5vw * 3 / 4);
+  max-height: calc(98.5vw / 1.4);
   background-color: var(--bg-poster);
-  border: 3px solid var(--border-gold);
+  border: 3.5px solid var(--border-gold);
   border-radius: 6px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  padding: 0.45rem 0.6rem;
+  padding: 0.5rem 0.65rem;
   overflow: hidden;
   position: relative;
 }
@@ -321,13 +323,13 @@ html, body {
   background: linear-gradient(180deg, var(--bg-card-alt) 0%, var(--bg-card) 100%);
   border: 1.5px solid var(--border-gold);
   border-radius: 5px;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.6rem;
   display: grid;
-  grid-template-columns: 44px 1fr 44px;
+  grid-template-columns: 46px 1fr 46px;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
   flex-shrink: 0;
 }
 
@@ -338,8 +340,8 @@ html, body {
 }
 
 .college-logo-img {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   border-radius: 50%;
   background: #ffffff;
@@ -358,7 +360,7 @@ html, body {
 
 .college-name {
   font-family: var(--font-title);
-  font-size: clamp(0.7rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.75rem, 1.25vw, 1.25rem);
   font-weight: 900;
   letter-spacing: 0.5px;
   color: #ffffff;
@@ -372,7 +374,7 @@ html, body {
 
 .department-name {
   font-family: var(--font-heading);
-  font-size: clamp(0.58rem, 0.9vw, 0.82rem);
+  font-size: clamp(0.6rem, 0.95vw, 0.88rem);
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 0.5px;
@@ -382,13 +384,13 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   BODY GRID SYSTEM (3 EQUAL BALANCE COLUMNS FIT SINGLE GLANCE)
+   BODY GRID SYSTEM (3 PERFECT EQUAL HEIGHT COLUMNS)
    -------------------------------------------------------------------------- */
 .poster-body {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.25fr 1.05fr 0.95fr;
-  gap: 0.35rem;
+  grid-template-columns: 1.22fr 1.05fr 0.95fr;
+  gap: 0.4rem;
   min-height: 0;
   overflow: hidden;
 }
@@ -396,21 +398,22 @@ html, body {
 .poster-column {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
   height: 100%;
   overflow: hidden;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION CARDS
+   SECTION CARDS (FULL VERTICAL FILL)
    -------------------------------------------------------------------------- */
 .section-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: 5px;
-  padding: 0.35rem;
+  padding: 0.4rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   height: 100%;
   overflow: hidden;
@@ -420,9 +423,9 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.18rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 3px;
-  margin-bottom: 0.22rem;
+  margin-bottom: 0.25rem;
   color: #ffffff;
   flex-shrink: 0;
 }
@@ -440,8 +443,8 @@ html, body {
 }
 
 .section-icon {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -454,28 +457,33 @@ html, body {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(0.68rem, 0.88vw, 0.82rem);
+  font-size: clamp(0.7rem, 0.92vw, 0.88rem);
   font-weight: 800;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
-   SUB-SECTIONS & DRUGS (NO TRUNCATION MICRO-SIZING)
+   SUB-SECTIONS & DRUGS (FULL DISTRIBUTION)
    -------------------------------------------------------------------------- */
 .sub-section {
-  margin-bottom: 0.18rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: 0.15rem;
 }
 
 .sub-section-header {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.1rem 0.3rem;
+  gap: 0.3rem;
+  padding: 0.12rem 0.35rem;
   border-radius: 3px;
-  margin-bottom: 0.12rem;
+  margin-bottom: 0.15rem;
   font-family: var(--font-heading);
   border-left: 2.5px solid var(--gold-accent);
+  flex-shrink: 0;
 }
 
 .primary-bg {
@@ -506,9 +514,9 @@ html, body {
   background: var(--gold-gradient);
   color: #000;
   font-weight: 900;
-  font-size: 0.58rem;
-  width: 12px;
-  height: 12px;
+  font-size: 0.6rem;
+  width: 13px;
+  height: 13px;
   border-radius: 2px;
   display: inline-flex;
   align-items: center;
@@ -516,37 +524,41 @@ html, body {
 }
 
 .sub-title {
-  font-size: clamp(0.58rem, 0.72vw, 0.66rem);
+  font-size: clamp(0.6rem, 0.76vw, 0.7rem);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .sub-tag {
   font-weight: 500;
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   opacity: 0.9;
   text-transform: none;
 }
 
-/* DRUG 2-COLUMN GRID (COMPACT NO-TRUNCATION FIT) */
+/* DRUG 2-COLUMN GRID (FILLS VERTICAL HEIGHT SMOOTHLY) */
 .drug-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.12rem;
+  gap: 0.15rem;
+  flex: 1;
 }
 
 .drug-item {
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 3px;
-  padding: 0.12rem 0.22rem;
+  padding: 0.15rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .drug-head {
   display: flex;
   align-items: center;
-  gap: 0.15rem;
-  margin-bottom: 0.01rem;
+  gap: 0.18rem;
+  margin-bottom: 0.02rem;
 }
 
 .drug-bullet {
@@ -562,67 +574,72 @@ html, body {
 }
 
 .drug-name {
-  font-size: clamp(0.56rem, 0.68vw, 0.62rem);
+  font-size: clamp(0.58rem, 0.7vw, 0.66rem);
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .drug-spec {
   font-weight: 500;
   color: var(--primary-accent);
-  font-size: 0.54rem;
+  font-size: 0.56rem;
 }
 
 .drug-details {
-  padding-left: 0.3rem;
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  padding-left: 0.35rem;
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   color: #cbd5e1;
   display: flex;
   flex-direction: column;
-  gap: 0.01rem;
+  gap: 0.02rem;
 }
 
 .detail-row {
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .lbl {
   font-weight: 700;
   color: var(--gold-accent);
-  margin-right: 0.08rem;
+  margin-right: 0.1rem;
 }
 
 /* --------------------------------------------------------------------------
-   ANALGESICS SECTION A (STACKED LIST ONE BELOW ONE)
+   ANALGESICS SECTION A (STACKED LIST FILLS COLUMN 2)
    -------------------------------------------------------------------------- */
 .analgesic-list {
   display: flex;
   flex-direction: column;
-  gap: 0.12rem;
-  margin-bottom: 0.18rem;
+  gap: 0.15rem;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
 }
 
 .analgesic-box {
   background: rgba(59, 130, 246, 0.08);
   border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: 3px;
-  padding: 0.12rem 0.22rem;
+  padding: 0.18rem 0.28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .box-title {
   font-weight: 800;
   color: #60a5fa;
-  font-size: clamp(0.56rem, 0.68vw, 0.62rem);
-  margin-bottom: 0.02rem;
+  font-size: clamp(0.58rem, 0.7vw, 0.66rem);
+  margin-bottom: 0.03rem;
   border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
-  padding-bottom: 0.01rem;
+  padding-bottom: 0.02rem;
 }
 
 .box-field {
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   color: #cbd5e1;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 /* COX INHIBITORS GRID */
@@ -630,20 +647,20 @@ html, body {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.12rem;
+  padding: 0.15rem;
 }
 
 .group-title-strip {
   display: flex;
   align-items: center;
-  gap: 0.18rem;
+  gap: 0.2rem;
   background: rgba(14, 165, 233, 0.2);
   color: #38bdf8;
-  padding: 0.08rem 0.25rem;
+  padding: 0.08rem 0.28rem;
   border-radius: 2px;
-  font-size: clamp(0.54rem, 0.64vw, 0.58rem);
+  font-size: clamp(0.56rem, 0.66vw, 0.62rem);
   font-weight: 700;
-  margin-bottom: 0.08rem;
+  margin-bottom: 0.1rem;
 }
 
 .cox2-bg {
@@ -654,10 +671,10 @@ html, body {
 .group-badge {
   background: #38bdf8;
   color: #000;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  font-size: 0.48rem;
+  font-size: 0.5rem;
   font-weight: 900;
   display: inline-flex;
   align-items: center;
@@ -671,73 +688,81 @@ html, body {
 .cox-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.06rem;
+  gap: 0.08rem;
 }
 
 .cox-item {
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   background: rgba(255, 255, 255, 0.02);
-  padding: 0.05rem 0.15rem;
+  padding: 0.06rem 0.18rem;
   border-radius: 2px;
   color: #cbd5e1;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .cox-item .idx {
   font-weight: 700;
   color: var(--gold-accent);
-  margin-right: 0.1rem;
+  margin-right: 0.12rem;
 }
 
 .cox-item .name {
   font-weight: 700;
   color: #ffffff;
-  margin-right: 0.1rem;
+  margin-right: 0.12rem;
 }
 
 .mt-xs {
-  margin-top: 0.12rem;
+  margin-top: 0.15rem;
 }
 
 /* --------------------------------------------------------------------------
-   ANTIBIOTICS SECTION & COMPACT REFERENCE
+   ANTIBIOTICS SECTION & REFERENCE (FULL HEIGHT MATCH)
    -------------------------------------------------------------------------- */
 .antibiotics-card {
-  flex: 1.1;
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .antibiotic-list {
   display: flex;
   flex-direction: column;
-  gap: 0.12rem;
+  gap: 0.15rem;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .abx-card {
   background: rgba(16, 185, 129, 0.08);
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 3px;
-  padding: 0.12rem 0.22rem;
+  padding: 0.15rem 0.28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .abx-title {
   font-weight: 800;
-  font-size: clamp(0.56rem, 0.68vw, 0.62rem);
+  font-size: clamp(0.58rem, 0.7vw, 0.66rem);
   color: #34d399;
-  margin-bottom: 0.02rem;
+  margin-bottom: 0.03rem;
   border-bottom: 1px dashed rgba(52, 211, 153, 0.3);
-  padding-bottom: 0.01rem;
+  padding-bottom: 0.02rem;
 }
 
 .abx-spec {
-  font-size: 0.54rem;
+  font-size: 0.56rem;
   font-weight: 600;
   color: #a7f3d0;
 }
 
 .abx-field {
-  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   color: #cbd5e1;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 /* --------------------------------------------------------------------------
@@ -753,17 +778,17 @@ html, body {
 .reference-content {
   display: flex;
   flex-direction: column;
-  gap: 0.18rem;
+  gap: 0.2rem;
 }
 
 .ref-book-line {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid var(--border-gold);
   color: #fde047;
-  padding: 0.1rem 0.3rem;
+  padding: 0.12rem 0.35rem;
   border-radius: 3px;
   font-weight: 800;
-  font-size: clamp(0.52rem, 0.62vw, 0.58rem);
+  font-size: clamp(0.54rem, 0.64vw, 0.6rem);
   text-align: center;
   white-space: nowrap;
 }
@@ -771,45 +796,45 @@ html, body {
 .ref-lbl {
   color: #ffffff;
   font-weight: 900;
-  margin-right: 0.1rem;
+  margin-right: 0.12rem;
 }
 
 .credits-grid {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
-  gap: 0.18rem;
+  gap: 0.2rem;
 }
 
 .credit-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  padding: 0.12rem 0.22rem;
+  padding: 0.15rem 0.25rem;
 }
 
 .credit-title {
   display: flex;
   align-items: center;
-  gap: 0.15rem;
-  font-size: clamp(0.5rem, 0.58vw, 0.54rem);
+  gap: 0.18rem;
+  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 0.3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.04rem;
-  margin-bottom: 0.08rem;
+  padding-bottom: 0.05rem;
+  margin-bottom: 0.1rem;
 }
 
 .credit-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.03rem;
+  gap: 0.04rem;
 }
 
 .credit-list li {
-  font-size: clamp(0.48rem, 0.55vw, 0.52rem);
-  line-height: 1.02;
+  font-size: clamp(0.5rem, 0.56vw, 0.54rem);
+  line-height: 1.05;
 }
 
 .doc-name {
@@ -825,16 +850,16 @@ html, body {
 .student-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.1rem;
+  gap: 0.12rem;
 }
 
 .chip {
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.3);
   color: #f8fafc;
-  font-size: clamp(0.48rem, 0.54vw, 0.52rem);
+  font-size: clamp(0.5rem, 0.55vw, 0.54rem);
   font-weight: 600;
-  padding: 0.04rem 0.15rem;
+  padding: 0.05rem 0.16rem;
   border-radius: 2px;
 }
 
@@ -848,7 +873,7 @@ html, body {
    -------------------------------------------------------------------------- */
 @media print {
   @page {
-    size: 4in 3in;
+    size: 7in 5in;
     margin: 0;
   }
   
