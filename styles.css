@@ -161,6 +161,27 @@ body.theme-print .chip {
   border-color: #7dd3fc;
 }
 
+body.theme-print .abx-spec {
+  color: #047857 !important;
+}
+
+body.theme-print .doc-role {
+  color: #334155 !important;
+}
+
+body.theme-print .drug-spec {
+  color: #0284c7 !important;
+}
+
+body.theme-print .sub-tag {
+  color: #1e293b !important;
+}
+
+body.theme-print .sub-letter {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+
 body.theme-print .ref-book-line {
   background: #fef3c7;
   color: #92400e;
