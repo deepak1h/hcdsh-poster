@@ -1,7 +1,7 @@
 /* ==========================================================================
    DENTAL AWARENESS FLEX POSTER STYLESHEET
    Form Factor: ~1.4:1 Ratio (Near 4:3 Flex Banner Standard e.g. 7ft x 5ft / 14ft x 10ft)
-   Strict Equal Height Column Distribution - Zero Empty Spaces
+   Equal Height Column Distribution & Rich Padding Fill
    ========================================================================== */
 
 :root {
@@ -124,14 +124,18 @@ body.theme-print .drug-item,
 body.theme-print .abx-card, 
 body.theme-print .analgesic-box, 
 body.theme-print .credit-box,
-body.theme-print .group-wrapper {
+body.theme-print .group-wrapper,
+body.theme-print .student-row,
+body.theme-print .vertical-list li {
   background: #f8fafc;
   border-color: #cbd5e1;
 }
 
 body.theme-print .drug-name, 
 body.theme-print .cox-item .name, 
-body.theme-print .doc-name {
+body.theme-print .doc-name,
+body.theme-print .student-name,
+body.theme-print .ref-val {
   color: #0f172a;
 }
 
@@ -152,7 +156,9 @@ body.theme-print .cox-item {
   color: #1e293b;
 }
 
-body.theme-print .lbl {
+body.theme-print .lbl,
+body.theme-print .roll-badge,
+body.theme-print .ref-lbl {
   color: #b45309;
 }
 
@@ -183,9 +189,8 @@ body.theme-print .sub-letter {
   color: #ffffff !important;
 }
 
-body.theme-print .ref-book-line {
+body.theme-print .ref-book-card {
   background: #fef3c7;
-  color: #92400e;
   border-color: #b45309;
 }
 
@@ -287,7 +292,6 @@ html, body {
 
 /* --------------------------------------------------------------------------
    STRICT POSTER CONTAINER (~1.4:1 FORM FACTOR NEAR 4:3)
-   STRETCHES EVERY SECTION TO 100% EQUAL HEIGHT - ZERO BLANK SPACES
    -------------------------------------------------------------------------- */
 .poster-workspace {
   width: 100vw;
@@ -404,7 +408,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   SECTION CARDS (FULL VERTICAL FILL)
+   SECTION CARDS
    -------------------------------------------------------------------------- */
 .section-card {
   background: var(--bg-card);
@@ -464,7 +468,7 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   SUB-SECTIONS & DRUGS (FULL DISTRIBUTION)
+   SUB-SECTIONS & DRUGS
    -------------------------------------------------------------------------- */
 .sub-section {
   display: flex;
@@ -536,7 +540,7 @@ html, body {
   text-transform: none;
 }
 
-/* DRUG 2-COLUMN GRID (FILLS VERTICAL HEIGHT SMOOTHLY) */
+/* DRUG 2-COLUMN GRID */
 .drug-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -606,22 +610,22 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   ANALGESICS SECTION A (STACKED LIST FILLS COLUMN 2)
+   ANALGESICS SECTION A (GENEROUS SPACING TO FILL COLUMN 2)
    -------------------------------------------------------------------------- */
 .analgesic-list {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.22rem;
   flex: 1;
   justify-content: space-between;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .analgesic-box {
   background: rgba(59, 130, 246, 0.08);
   border: 1px solid rgba(59, 130, 246, 0.25);
-  border-radius: 3px;
-  padding: 0.18rem 0.28rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.35rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -630,24 +634,24 @@ html, body {
 .box-title {
   font-weight: 800;
   color: #60a5fa;
-  font-size: clamp(0.58rem, 0.7vw, 0.66rem);
-  margin-bottom: 0.03rem;
+  font-size: clamp(0.6rem, 0.74vw, 0.7rem);
+  margin-bottom: 0.05rem;
   border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
-  padding-bottom: 0.02rem;
+  padding-bottom: 0.03rem;
 }
 
 .box-field {
-  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
+  font-size: clamp(0.54rem, 0.63vw, 0.61rem);
   color: #cbd5e1;
-  line-height: 1.08;
+  line-height: 1.1;
 }
 
 /* COX INHIBITORS GRID */
 .group-wrapper {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
+  border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.15rem;
+  padding: 0.2rem;
 }
 
 .group-title-strip {
@@ -656,11 +660,11 @@ html, body {
   gap: 0.2rem;
   background: rgba(14, 165, 233, 0.2);
   color: #38bdf8;
-  padding: 0.08rem 0.28rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 2px;
   font-size: clamp(0.56rem, 0.66vw, 0.62rem);
   font-weight: 700;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.12rem;
 }
 
 .cox2-bg {
@@ -688,16 +692,16 @@ html, body {
 .cox-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.08rem;
+  gap: 0.1rem;
 }
 
 .cox-item {
-  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
+  font-size: clamp(0.54rem, 0.62vw, 0.6rem);
   background: rgba(255, 255, 255, 0.02);
-  padding: 0.06rem 0.18rem;
+  padding: 0.08rem 0.2rem;
   border-radius: 2px;
   color: #cbd5e1;
-  line-height: 1.08;
+  line-height: 1.1;
 }
 
 .cox-item .idx {
@@ -713,14 +717,14 @@ html, body {
 }
 
 .mt-xs {
-  margin-top: 0.15rem;
+  margin-top: 0.18rem;
 }
 
 /* --------------------------------------------------------------------------
-   ANTIBIOTICS SECTION & REFERENCE (FULL HEIGHT MATCH)
+   ANTIBIOTICS SECTION & STACKED REFERENCE CARD
    -------------------------------------------------------------------------- */
 .antibiotics-card {
-  flex: 1.15;
+  flex: 1.1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -766,10 +770,10 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   COMPACT REFERENCE SECTION (BALANCED BOTTOM FIT)
+   2-LINE REFERENCE BADGE & VERTICALLY STACKED FACULTY/STUDENT CREDITS
    -------------------------------------------------------------------------- */
 .reference-card {
-  flex: 0.85;
+  flex: 0.9;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
   border: 1.5px solid var(--border-gold);
   justify-content: center;
@@ -778,62 +782,79 @@ html, body {
 .reference-content {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.25rem;
 }
 
-.ref-book-line {
+/* 2-LINE REFERENCE CARD */
+.ref-book-card {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid var(--border-gold);
-  color: #fde047;
-  padding: 0.12rem 0.35rem;
-  border-radius: 3px;
-  font-weight: 800;
-  font-size: clamp(0.54rem, 0.64vw, 0.6rem);
+  border-radius: 4px;
+  padding: 0.18rem 0.35rem;
   text-align: center;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.04rem;
 }
 
 .ref-lbl {
-  color: #ffffff;
+  color: var(--gold-accent);
   font-weight: 900;
-  margin-right: 0.12rem;
+  font-size: clamp(0.56rem, 0.66vw, 0.62rem);
+  letter-spacing: 0.5px;
 }
 
-.credits-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 0.2rem;
+.ref-val {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+  line-height: 1.1;
+}
+
+/* VERTICAL STACK FOR GUIDED BY & PRESENTED BY */
+.credits-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
 }
 
 .credit-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  padding: 0.15rem 0.25rem;
+  padding: 0.18rem 0.3rem;
 }
 
 .credit-title {
   display: flex;
   align-items: center;
   gap: 0.18rem;
-  font-size: clamp(0.52rem, 0.6vw, 0.58rem);
+  font-size: clamp(0.54rem, 0.62vw, 0.6rem);
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 0.3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.05rem;
-  margin-bottom: 0.1rem;
+  padding-bottom: 0.06rem;
+  margin-bottom: 0.12rem;
 }
 
-.credit-list {
+/* GUIDED BY FACULTY ONE BY ONE VERTICAL STACK */
+.vertical-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.04rem;
+  gap: 0.08rem;
 }
 
-.credit-list li {
-  font-size: clamp(0.5rem, 0.56vw, 0.54rem);
+.vertical-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(0.52rem, 0.6vw, 0.56rem);
+  padding: 0.08rem 0.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
   line-height: 1.05;
 }
 
@@ -843,29 +864,37 @@ html, body {
 }
 
 .doc-role {
-  font-size: 0.48rem;
+  font-size: 0.5rem;
   color: #cbd5e1;
 }
 
-.student-chips {
+/* STUDENT ROLL NO ROWS */
+.student-list-rows {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.12rem;
+  flex-direction: column;
+  gap: 0.08rem;
 }
 
-.chip {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #f8fafc;
-  font-size: clamp(0.5rem, 0.55vw, 0.54rem);
-  font-weight: 600;
-  padding: 0.05rem 0.16rem;
-  border-radius: 2px;
+.student-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+  padding: 0.08rem 0.3rem;
 }
 
-.roll {
+.roll-badge {
+  font-weight: 800;
   color: var(--gold-accent);
-  margin-left: 0.03rem;
+  font-size: clamp(0.5rem, 0.58vw, 0.55rem);
+}
+
+.student-name {
+  font-weight: 700;
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
