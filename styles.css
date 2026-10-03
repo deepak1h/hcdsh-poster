@@ -58,13 +58,13 @@ body.theme-navy {
 
 /* HIGH CONTRAST WHITE FLEX PRINT THEME */
 body.theme-print {
-  --bg-workspace: #94a3b8;
+  --bg-workspace: #64748b;
   --bg-poster: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-alt: #f1f5f9;
+  --bg-card-alt: #f8fafc;
   --primary-accent: #0284c7;
   --gold-accent: #b45309;
-  --gold-gradient: linear-gradient(135deg, #b45309 0%, #78350f 100%);
+  --gold-gradient: linear-gradient(135deg, #d97706 0%, #b45309 100%);
   --text-main: #0f172a;
   --text-muted: #334155;
   --text-heading: #0f172a;
@@ -78,7 +78,7 @@ body.theme-print .poster-container {
 }
 
 body.theme-print .poster-header {
-  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
   border-color: #0f172a;
 }
 
@@ -92,10 +92,11 @@ body.theme-print .department-name {
 
 body.theme-print .section-card {
   background: #ffffff;
-  border-color: #64748b;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-color: #475569;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* SECTION HEADERS */
 body.theme-print .primary-bg {
   background: #fee2e2;
   color: #991b1b;
@@ -120,63 +121,160 @@ body.theme-print .peripherally-bg {
   border-color: #0ea5e9;
 }
 
-body.theme-print .drug-item,
-body.theme-print .abx-card,
-body.theme-print .analgesic-box,
-body.theme-print .credit-box,
-body.theme-print .group-wrapper,
-body.theme-print .student-row,
-body.theme-print .vertical-list li {
-  background: #f8fafc;
-  border-color: #cbd5e1;
+/* EMERGENCY DRUGS BOXES */
+body.theme-print .col-emergency .drug-item {
+  background: #fff5f5;
+  border: 1.5px solid #fca5a5;
 }
 
-body.theme-print .drug-name,
-body.theme-print .cox-item .name,
-body.theme-print .doc-name,
-body.theme-print .student-name {
-  color: #0f172a;
+body.theme-print .col-emergency .drug-name {
+  color: #991b1b;
+}
+
+body.theme-print .col-emergency .drug-spec {
+  color: #dc2626 !important;
+}
+
+body.theme-print .col-emergency .drug-details {
+  color: #1e293b;
+}
+
+/* ANALGESIC BOXES */
+body.theme-print .analgesic-box {
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
 }
 
 body.theme-print .box-title {
   color: #1d4ed8;
-  border-bottom-color: #93c5fd;
+  border-bottom-color: #bfdbfe;
+}
+
+body.theme-print .box-field {
+  color: #1e3a8a;
+}
+
+/* COX INHIBITORS GROUPS */
+body.theme-print .group-wrapper {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+}
+
+body.theme-print .group-title-strip {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+body.theme-print .group-badge {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+body.theme-print .cox2-bg {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+body.theme-print .cox2-bg .group-badge {
+  background: #9333ea;
+  color: #ffffff;
+}
+
+body.theme-print .cox-item {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+body.theme-print .cox-item .idx {
+  color: #b45309;
+}
+
+body.theme-print .cox-item .name {
+  color: #0f172a;
+}
+
+/* ANTIBIOTICS CARDS */
+body.theme-print .abx-card {
+  background: #ecfdf5;
+  border: 1.5px solid #6ee7b7;
 }
 
 body.theme-print .abx-title {
   color: #047857;
-  border-bottom-color: #6ee7b7;
-}
-
-body.theme-print .drug-details,
-body.theme-print .box-field,
-body.theme-print .abx-field,
-body.theme-print .cox-item {
-  color: #1e293b;
-}
-
-body.theme-print .lbl,
-body.theme-print .roll-badge,
-body.theme-print .ref-lbl {
-  color: #b45309;
-}
-
-body.theme-print .chip {
-  background: #e0f2fe;
-  color: #0369a1;
-  border-color: #7dd3fc;
+  border-bottom-color: #a7f3d0;
 }
 
 body.theme-print .abx-spec {
-  color: #047857 !important;
+  color: #059669 !important;
+}
+
+body.theme-print .abx-field {
+  color: #064e3b;
+}
+
+/* REFERENCE BADGE & CREDIT BOXES */
+body.theme-print .reference-card {
+  background: #f8fafc;
+  border: 1.5px solid #b45309;
+}
+
+body.theme-print .ref-book-line {
+  background: #fffbeb;
+  border: 1.5px solid #d97706;
+  padding: 0.12rem 0.3rem;
+  border-radius: 4px;
+}
+
+body.theme-print .ref-lbl {
+  color: #92400e !important;
+  font-weight: 900 !important;
+}
+
+body.theme-print .ref-text {
+  color: #b45309 !important;
+  font-weight: 900 !important;
+}
+
+body.theme-print .credit-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+body.theme-print .credit-title {
+  color: #0284c7;
+  border-bottom-color: #cbd5e1;
+}
+
+body.theme-print .vertical-list li {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+body.theme-print .doc-name {
+  color: #0f172a;
 }
 
 body.theme-print .doc-role {
-  color: #334155 !important;
+  color: #475569 !important;
 }
 
-body.theme-print .drug-spec {
-  color: #0284c7 !important;
+body.theme-print .student-row {
+  background: #e0f2fe;
+  border: 1.5px solid #7dd3fc;
+}
+
+body.theme-print .roll-badge {
+  color: #0369a1 !important;
+  font-weight: 900;
+}
+
+body.theme-print .student-name {
+  color: #0f172a;
+}
+
+body.theme-print .lbl {
+  color: #b45309;
 }
 
 body.theme-print .sub-tag {
@@ -186,12 +284,6 @@ body.theme-print .sub-tag {
 body.theme-print .sub-letter {
   background: #0f172a !important;
   color: #ffffff !important;
-}
-
-body.theme-print .ref-book-line {
-  background: #fef3c7;
-  color: #92400e;
-  border-color: #b45309;
 }
 
 /* --------------------------------------------------------------------------
